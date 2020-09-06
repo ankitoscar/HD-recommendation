@@ -1,0 +1,54 @@
+{% extends "layout.html" %} {% block content %}
+{%from "_formhelpers.html" import render_field%}
+{%from "_formhelpers.html" import render_radio_field%}
+{%from "_formhelpers.html" import render_recap%}
+
+
+
+<form action="/signup" method="POST" class='form1'>
+  <h1>Please submit the following info so we can find you the best holiday destination for the season.</h1>
+  {{form.csrf_token}}
+  {{ form.hidden_tag() }}
+
+
+
+  
+
+  
+
+
+
+  {{render_field(form.birthdate) }}
+
+
+  {{render_radio_field(form.radios) }}
+
+
+
+
+
+
+
+  {{render_recap(form.recaptcha)}}
+
+
+
+
+
+
+
+
+
+
+  {{form.submit (class="text-success")}}
+  
+
+
+<!--rendered different fiels using render_field and render_radio_field macros ,, and rendered others just as that because they didnt need any specifications-->
+
+</form>
+
+
+
+<!--gave an anchor tag  that leads to home-->
+{% endblock content %}
